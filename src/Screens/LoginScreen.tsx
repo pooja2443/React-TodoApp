@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const LoginScreen = () => {
   const navigate = useNavigate();
@@ -19,16 +22,16 @@ export const LoginScreen = () => {
 
     const handleSubmit = () => {
         if(!email || !pass) {
-            console.log("fill the fields");
+            toast.error("Please fill all the fields");
         } 
         else if (!validationEmail(email)) {
-            console.log("invalid email format");
+            toast.error("Invalid email format");
         }
         else if (!validationPass(pass)) {
-            console.log("Invalid password");
+            toast.error("Password must be at least 6 characters long");
         }
         else {
-            console.log("Login Successfull!");
+            toast.success("Login successful!");
             setEmail(""); 
             setPass(""); 
             navigate("/tasks");
@@ -37,6 +40,7 @@ export const LoginScreen = () => {
 
   return (
     <div className="container">
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className="headerRow">
         <h1>Welcome To SaleSwift</h1>
       </div>
@@ -45,7 +49,9 @@ export const LoginScreen = () => {
         Create an account and discover products anywhere you go
       </p>
 
+      <p>Email :</p>
       <input type="email" placeholder="Email" className="input" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <p>Password :</p>
       <input type="password" placeholder="Password" className="input" value={pass} onChange={(e) => setPass(e.target.value)} />
 
       <div className="rememberRow">
