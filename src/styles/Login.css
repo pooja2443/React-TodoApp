@@ -1,0 +1,128 @@
+.container {
+    background-color: #f5f5f5;
+    color: #000;
+    margin: 50px auto;
+    padding: 30px 24px;
+    border-radius: 16px;
+    font-family: "Arial", sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    color: #777;
+    margin: 10px 0 20px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 14px 12px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+  
+  .rememberRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin: 8px 0 20px;
+  }
+  
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .link {
+    color: #0c54ac;
+    text-decoration: none;
+  }
+  
+  .signInButton {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff7b2c;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .signInButton:hover {
+    background-color: #ff985a;
+  }
+  
+  .orSection {
+    display: flex;
+    align-items: center;
+    color: #aaa;
+    font-size: 13px;
+    margin: 24px 0;
+  }
+  
+  .orSection hr {
+    flex: 1;
+    border: 0.5px solid #333;
+  }
+  
+  .orSection span {
+    margin: 0 10px;
+  }
+  
+  .socialContainer {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  
+  .socialButton {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .socialIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .socialButton:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: #2a2a2a;
+  }
+  
+  .registerText {
+    font-size: 13px;
+    margin: 20px 0 10px;
+    text-align: center;
+  }
+  
+  .termsText {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 16px;
+    text-align: center;
+  }
