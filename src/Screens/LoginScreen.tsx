@@ -98,8 +98,12 @@ export const LoginScreen = () => {
       </div>
 
       <p className="registerText">
-        Not registered? <a href="#" className="link">Register now</a>
+          Not registered?{" "}
+          <button className="link" onClick={() => navigate('/signup')}>
+            Register now
+          </button>
       </p>
+
 
       <p className="termsText">
         By signing up you can acknowledge and agree to event.com 
