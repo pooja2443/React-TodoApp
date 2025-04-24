@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 export const LoginScreen = () => {
   const navigate = useNavigate();
 
@@ -31,10 +30,14 @@ export const LoginScreen = () => {
             toast.error("Password must be at least 6 characters long");
         }
         else {
+
+          const username = email.split('@')[0];
+
             toast.success("Login successful!");
             setEmail(""); 
             setPass(""); 
-            navigate("/tasks");
+
+            navigate("/tasks", {state : { username }});
         }
     }
 
@@ -70,38 +73,38 @@ export const LoginScreen = () => {
       </div>
 
       <div className="socialContainer">
-        <button className="socialButton">
-          <img
-            src="https://www.google.com/favicon.ico"
-            alt="Google"
-            className="socialIcon"
-          />
-        </button>
+      <button className="socialButton">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+      alt="Google"
+      className="socialIcon"
+    />
+    </button>
 
-        <button className="socialButton">
-          <img
-            src="https://www.facebook.com/favicon.ico"
-            alt="Facebook"
-            className="socialIcon"
-          />
-        </button>
+    <button className="socialButton">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png"
+        alt="Facebook"
+        className="socialIcon"
+      />
+    </button>
 
-        <button className="socialButton">
-          <img
-            src="https://www.apple.com/favicon.ico"
-            alt="Apple"
-            className="socialIcon"
-          />
-        </button>
+    <button className="socialButton">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/0/747.png"
+        alt="Apple"
+        className="socialIcon"
+      />
+    </button>
 
-        <button className="socialButton">
-          <img
-            src="https://twitter.com/favicon.ico"
-            alt="X"
-            className="socialIcon"
-          />
-        </button>
-      </div>
+      <button className="socialButton">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png"
+          alt="X"
+          className="socialIcon"
+        />
+      </button>
+    </div>
 
       <p className="registerText">
           Not registered?{" "}
@@ -109,7 +112,6 @@ export const LoginScreen = () => {
             Register now
           </button>
       </p>
-
 
       <p className="termsText">
         By signing up you can acknowledge and agree to event.com 

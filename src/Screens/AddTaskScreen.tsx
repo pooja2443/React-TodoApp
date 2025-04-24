@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 import "../styles/AddTask.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface Task {
     id: number;
@@ -21,7 +23,10 @@ export const AddTask = () => {
     }, [editingTask]);
 
     const handleSave = () => {
-        if (!addTask.trim()) return;
+        if (!addTask.trim()) {
+            toast.error("Please enter a task");
+            return;
+        }
 
         const existing = localStorage.getItem("tasks");
         const tasks: Task[] = existing ? JSON.parse(existing) : [];
@@ -32,12 +37,14 @@ export const AddTask = () => {
             updatedTasks = tasks.map((task) =>
                 task.id === editingTask.id ? { ...task, text: addTask.trim() } : task
             );
+            toast.success("Task updated successfully!");
         } else {
             const newTask: Task = {
                 id: Date.now(),
                 text: addTask.trim()
             };
             updatedTasks = [...tasks, newTask];
+            toast.success("Task added successfully!");
         }
 
         localStorage.setItem("tasks", JSON.stringify(updatedTasks));
@@ -46,8 +53,8 @@ export const AddTask = () => {
 
     return (
         <div className="add-task-container">
+            <ToastContainer position="top-right" autoClose={3000} />
             <div className="header">
-                {/* <button onClick={() => navigate('/tasks')} className="back-btn">←</button> */}
                 <h2 className="title">{editingTask ? "Edit Task" : "Add New Task"}</h2>
             </div>
 

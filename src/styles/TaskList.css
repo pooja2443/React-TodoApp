@@ -18,6 +18,18 @@
     margin-right: auto;
     padding: 0;
   }
+
+  .subText {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    color: #080808;
+  }
   
   .taskList {
     margin-bottom: 20px;

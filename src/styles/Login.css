@@ -22,11 +22,11 @@
   .input {
     width: 100%;
     padding: 14px 12px;
-    margin: 12px 0;
+    margin: 10px 0px;
     border-radius: 12px;
     border: 1px solid #ddd;
     font-size: 14px;
-    background-color: #fff;
+    background-color: #fff; 
     box-sizing: border-box;
   }
   
@@ -68,11 +68,11 @@
   .orSection {
     display: flex;
     align-items: center;
-    color: #aaa;
+    color: #8f8484;
     font-size: 13px;
     margin: 24px 0;
   }
-  
+
   .orSection hr {
     flex: 1;
     border: 0.5px solid #333;
